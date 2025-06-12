@@ -1,3 +1,10 @@
+export interface ToastStoreInterface {
+  open: boolean;
+  message: string;
+  type: 'success' | 'error' | 'warning' | 'info';
+  hideToast: () => void;
+}
+
 export interface GitHubUserInterface {
   login: string;
   avatar_url: string;

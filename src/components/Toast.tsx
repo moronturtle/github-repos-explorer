@@ -30,13 +30,13 @@ const Toast = () => {
   if (!open) return null;
 
   return (
-    <div className="toast toast-top toast-center z-50">
+    <div className="toast toast-top toast-center z-50" data-testid="toast">
       <div
         className={`alert ${colorMap[type]} flex gap-3 items-center px-4 py-2 shadow-lg rounded-lg`}
       >
         <span>{iconMap[type]}</span>
         <span className="flex-1">{message}</span>
-        <X size={16} className="cursor-pointer" onClick={hideToast} />
+        <X size={16} data-testid="toast-close" className="cursor-pointer" onClick={hideToast} />
       </div>
     </div>
   );
