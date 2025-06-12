@@ -19,7 +19,7 @@ export const fetchGithubRepos = async (
   username: string
 ): Promise<GitHubRepoInterface[]> => {
   const res = await callApi<GitHubRepoInterface[]>({
-    method: "GET",
+    method: 'GET',
     subUrl: `/users/${username}/repos`,
   });
   return res.data;
