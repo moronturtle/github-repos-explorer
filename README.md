@@ -1,5 +1,8 @@
 # GitHub Repositories Explorer
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?logo=githubpages)](https://moronturtle.github.io/github-repos-explorer/)
+
+
 A simple React + TypeScript application that allows you to search for GitHub users and view their repositories.
 
 ## Features
