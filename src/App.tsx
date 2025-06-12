@@ -1,12 +1,11 @@
-import './App.css';
+import Home from './pages/Home';
+import Toast from './components/Toast';
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <h2 className="text-3xl text-blue-500">welcome to github-repos-explorer</h2>
-      <button className="btn btn-primary">Primary</button>
-      <button className="btn btn-secondary">Secondary</button>
-      <button className="btn btn-accent">Accent</button>
+    <div className="min-h-screen bg-teal-50">
+      <Home />
+      <Toast />
     </div>
   );
 }
