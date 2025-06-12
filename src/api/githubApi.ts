@@ -4,7 +4,7 @@ export const fetchGithubUsers = async (
   callApi: ReturnType<typeof import('./baseApi').useApi>['callApi'],
   query: string,
   page: number = 1,
-  perPage: number = 5
+  perPage: number = 3
 ): Promise<GitHubUserInterface[]> => {
   const res = await callApi<{ items: GitHubUserInterface[] }>({
     method: 'GET',

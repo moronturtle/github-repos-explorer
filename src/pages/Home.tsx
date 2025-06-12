@@ -56,41 +56,49 @@ const Home = () => {
   }, [inView, loading, hasMore, searchQuery, fetchUsers, page, setPage]);
 
   return (
-    <div className="max-w-xl mx-auto p-4">
-      <div className="sticky top-0 z-20 bg-teal-50 backdrop-blur py-4">
-        <h1 className="text-xl sm:text-xl md:text-2xl font-bold text-center pb-3 tracking-wide">
-          GitHub Explorer
-        </h1>
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-          <input
-            {...register('username')}
-            type="text"
-            className="input input-bordered w-full rounded-lg px-4 py-3 text-base bg-white border-gray-300 focus:border-blue-500 focus:outline-none shadow"
-            placeholder="Enter username"
-          />
-          <button
-            type="submit"
-            className="btn bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-base font-semibold py-3"
+    <div className="min-h-screen bg-gradient-to-tr from-cyan-100 via-white to-cyan-200 flex justify-center items-start py-8 px-2">
+      <div className="w-full max-w-xl">
+        <div className="sticky top-0 z-30 bg-white/70 backdrop-blur-md border border-white/40 shadow-lg rounded-2xl px-4 pb-6 pt-4 mb-6">
+          <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-center pb-2 tracking-wide text-cyan-700 drop-shadow-sm select-none">
+            GitHub Explorer
+          </h1>
+          <form
+            className="flex flex-col gap-2 md:gap-3"
+            onSubmit={handleSubmit(onSubmit)}
+            autoComplete="off"
           >
-            Search
-          </button>
-        </form>
-        {searchQuery && (
-          <div className="bg-white mt-4 text-gray-600 text-sm py-2">
-            Showing {users.length} result{users.length !== 1 ? 's' : ''} for{' '}
-            <span className="font-semibold text-gray-800">"{searchQuery}"</span>
-          </div>
-        )}
-      </div>
+            <input
+              {...register('username')}
+              type="text"
+              className="input input-bordered w-full rounded-xl px-3 py-2 text-sm md:text-base bg-white/80 border border-white/50 shadow focus:border-cyan-500 focus:outline-none"
+              placeholder="Enter username"
+            />
+            <button
+              type="submit"
+              className="btn bg-cyan-500 hover:bg-cyan-600 text-white border border-cyan-400 focus:ring-2 focus:ring-cyan-400 rounded-xl text-sm md:text-base font-semibold py-2 px-4 shadow-md transition-all"
+            >
+              Search
+            </button>
+          </form>
+          {searchQuery && (
+            <div className="bg-white/70 mt-3 text-gray-600 text-xs md:text-sm py-2 px-2 rounded shadow">
+              Showing {users.length} result{users.length !== 1 ? 's' : ''} for{' '}
+              <span className="font-semibold text-gray-800">"{searchQuery}"</span>
+            </div>
+          )}
+        </div>
 
-      <div className="mt-2">
-        <UserAccordionList />
-        {loading && <LoadingSpinner />}
-        {!loading && hasMore && users.length > 0 && (
-          <div ref={loaderRef} className="flex justify-center py-4 opacity-60">
-            <span>Loading more...</span>
-          </div>
-        )}
+        <div className="mt-2 space-y-2">
+          <UserAccordionList />
+          {loading && <LoadingSpinner />}
+          {!loading && hasMore && users.length > 0 && (
+            <div ref={loaderRef} className="flex justify-center py-4 opacity-70">
+              <span className="bg-white/80 px-3 py-1 rounded-full text-sm text-cyan-700 shadow">
+                Loading more...
+              </span>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

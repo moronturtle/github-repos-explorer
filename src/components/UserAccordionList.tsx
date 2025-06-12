@@ -36,21 +36,31 @@ const UserAccordionList = () => {
   if (!users.length) return null;
 
   return (
-    <ul className="mt-4">
+    <ul className="mt-2 space-y-2">
       {users.map((user, key) => (
-        <li key={user.login} className="mb-2">
+        <li key={user.login}>
           <button
             onClick={() => handleToggle(key, user)}
-            className={`flex justify-between items-center w-full px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg shadow transition text-left font-semibold ${
-              selectedUser === key ? 'border-l-4 border-blue-500' : ''
-            }`}
+            className={`
+              flex justify-between items-center w-full px-4 py-2
+              bg-white/60 hover:bg-white/90
+              rounded-xl shadow-md transition-all text-left font-medium
+              border border-white/30
+              text-sm md:text-base
+              backdrop-blur cursor-pointer
+              ${selectedUser === key ? 'ring-2 ring-cyan-300' : ''}
+            `}
           >
-            <span className="flex items-center gap-2">
-              <img src={user.avatar_url} className="w-6 h-6 rounded-full" alt={user.login} />
-              {user.login}
+            <span className="flex items-center gap-3">
+              <img
+                src={user.avatar_url}
+                className="w-7 h-7 rounded-full border border-white/60 shadow"
+                alt={user.login}
+              />
+              <span className="truncate">{user.login}</span>
             </span>
-            <span className="text-xl">
-              {selectedUser ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+            <span className="text-lg md:text-xl">
+              {selectedUser === key ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
             </span>
           </button>
           {selectedUser === key && (
