@@ -20,6 +20,7 @@ A simple React + TypeScript application that allows you to search for GitHub use
 - [Zustand]
 - [ReactHookForm]
 - [react-intersection-observe]
+- [vitest]
 
 
 ## 🔧 Setup
