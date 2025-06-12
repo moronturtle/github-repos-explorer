@@ -69,11 +69,13 @@ const Home = () => {
           >
             <input
               {...register('username')}
+              data-testid="search-input"
               type="text"
               className="input input-bordered w-full rounded-xl px-3 py-2 text-sm md:text-base bg-white/80 border border-white/50 shadow focus:border-cyan-500 focus:outline-none"
               placeholder="Enter username"
             />
             <button
+              data-testid="search-btn"
               type="submit"
               className="btn bg-cyan-500 hover:bg-cyan-600 text-white border border-cyan-400 focus:ring-2 focus:ring-cyan-400 rounded-xl text-sm md:text-base font-semibold py-2 px-4 shadow-md transition-all"
             >
