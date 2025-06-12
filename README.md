@@ -19,12 +19,12 @@ A simple React + TypeScript application that allows you to search for GitHub use
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
-- [Tailwind]
-- [DaisyUi]
-- [Zustand]
-- [ReactHookForm]
-- [react-intersection-observe]
-- [vitest]
+- Tailwind
+- DaisyUi
+- Zustand
+- ReactHookForm
+- react-intersection-observe
+- vitest
 
 ## 🔧 Setup
 
@@ -38,7 +38,7 @@ npm install
 
 # Run locally
 npm run dev
-
+```
 
 ## ⚠️ GitHub API Rate Limits
 
@@ -53,5 +53,3 @@ This app uses a custom `User-Agent` header to ensure that requests to the GitHub
 If you plan to use this app intensively, or for multiple users, you should add your own [GitHub Personal Access Token](https://github.com/settings/tokens) in the API configuration to avoid hitting the low unauthenticated rate limit.
 
 > For more information, see [GitHub API documentation](https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting).
-
-```
